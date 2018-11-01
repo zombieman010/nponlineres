@@ -1,0 +1,27 @@
+# PostgreSQL. Versions 9.1 and up are supported.
+#
+# Configure Using Gemfile
+# gem 'pg'
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: nponline_development
+  username: <%= ENV['NPONLINE_DEV_DATABASE_USERNAME'] %>
+  password: <%= ENV['NPONLINE_DEV_DATABASE_PASSWORD'] %>
+
+test:
+  <<: *default
+  database: nponline_test
+
+production:
+  <<: *default
+  database: nponline_production
+  username: nponline
+  password: <%= ENV['NPONLINE_DATABASE_PASSWORD'] %>
