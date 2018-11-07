@@ -1,0 +1,113 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$light-grey: #D3D3D3D3;
+
+@media (max-width:768px) {
+  header {
+    ul a {
+      padding: 0px 3px 0 px 3px;
+    }
+    #logo {
+      margin-right: 1px;
+      margin-left: 3px;
+    }
+  }
+}
+
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+/* header */
+
+header {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+  }
+
+  li {
+    float: right;
+
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    text-decoration: none;
+    color: $light-grey;
+  }
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-top: 9px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* footer */
+
+.footer {
+  background-color: $light-grey;
+
+}
