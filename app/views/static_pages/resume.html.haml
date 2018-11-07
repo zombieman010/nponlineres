@@ -1,0 +1,122 @@
+= provide(:title, "Resume")
+
+/ Page Container
+.w3-content.w3-margin-top{:style => "max-width:1400px;"}
+  / The Grid
+  .w3-row-padding
+    / Left Column
+    .w3-third
+      .w3-white.w3-text-grey.w3-card-4
+        .w3-display-container
+          %img{:alt => "Avatar", :src => image_path("profile_picture.jpg"), :style => "width:100%"}/
+          .w3-display-bottomleft.w3-container.w3-text-black
+            %h2 Nathaniel Pautzke
+        .w3-container
+          %p
+            %i.fa.fa-briefcase.fa-fw.w3-margin-right.w3-large.w3-text-blue>
+            Software Developer
+          %p
+            %i.fa.fa-home.fa-fw.w3-margin-right.w3-large.w3-text-blue>
+            Shorewood, MN
+          %p
+            %i.fa.fa-envelope.fa-fw.w3-margin-right.w3-large.w3-text-blue>
+            nathaniel.pautzke@gmail.com
+          %p
+            %i.fa.fa-phone.fa-fw.w3-margin-right.w3-large.w3-text-blue>
+            (952)-688-8226
+          %hr
+            %p
+              %i.github_img
+                = image_tag("GitHub-Mark-32px.png")
+                =link_to "github.com/zombieman010", "https://github.com/zombieman010", style: "padding-left: 3px;"
+
+          %hr/
+          %p.w3-large
+            %b
+          %table.w3-table-all
+            %thead
+              %tr.w3-light-gray
+                %th
+                  Core Lang.
+                %th
+                  Web Dev.
+              %tr.w3-hover-blue.w3-white
+                %th
+                  Ruby
+                %th
+                  Rails
+              %tr.w3-hover-blue.w3-white
+                %th
+                  Node.Js
+                %th
+                  React-Native
+              %tr.w3-hover-blue.w3-white
+                %th
+                  Python
+                %th
+                  MySql
+              %tr.w3-hover-blue.w3-white
+                %th
+                  Java
+                %th
+                  Andriod Dev.
+          %br/
+          %p.w3-large.w3-text-theme
+            %b
+              %i.fa.fa-asterisk.fa-fw.w3-margin-right.w3-text-blue>
+              Soft Skills
+          %ul
+            %li
+              Commnication
+            %li
+              Leadership
+            %li
+              Problem Solving
+            %li
+              Collorbation
+          %br/
+      %br/
+      / End Left Column
+    / Right Column
+    .w3-twothird
+      .w3-container.w3-card.w3-white.w3-margin-bottom
+        %h2.w3-text-grey.w3-padding-16
+          %i.fa.fa-suitcase.fa-fw.w3-margin-right.w3-xxlarge.w3-text-blue>
+          Professional Experience
+        .w3-container
+          %h5.w3-opacity
+            %b Data Processing Tech I / IWCO Direct
+          %h6.w3-text-blue
+            %i.fa.fa-calendar.fa-fw.w3-margin-right>
+            April 2016 -
+            %span.w3-tag.w3-blue.w3-round Current
+          %p
+            Responsible for taking raw data to be used for dynamic page content. Daily I work with a few scripting languages (TSSUtil and Data Right) to normalize, cleanse, and append data to meet customer
+            needs. Over my career, I have worked with over half a billion records for mailing. Another part of my role includes using software to create advanced matching for cleansing duplicate records in large files.
+          %hr/
+        .w3-container
+          %h5.w3-opacity
+            %b Associate Software Developer / Aglytix
+          %h6.w3-text-blue
+            %i.fa.fa-calendar.fa-fw.w3-margin-right>
+            May 2015 - Jan 2016
+          %p
+            While adhering to Agile methodology and Scrum I worked on documentation and implementing features on the Rails framework. Sprint weeks consisted of creating HTML and JavaScript content to help customers
+            navigate the software with ease. Basic testing, API integration, debugging, and Java backend reports were utilized.
+          %hr/
+          %br/
+      .w3-container.w3-card.w3-white
+        %h2.w3-text-grey.w3-padding-16
+          %i.fa.fa-certificate.fa-fw.w3-margin-right.w3-xxlarge.w3-text-blue>
+          Education
+        .w3-container
+          %h5.w3-opacity
+            %b Colorado State University - Global Campus
+          %h6.w3-text-blue
+            %i.fa.fa-calendar.fa-fw.w3-margin-right>
+            2017-2018
+          %p Bachelor Degree - Information Technology
+          %br/
+      / End Right Column
+    / End Grid
+  / End Page Container
