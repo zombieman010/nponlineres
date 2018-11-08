@@ -1,0 +1,34 @@
+= provide(:title, "Projects")
+
+.w3-container.w3-margin-top
+  .w3-card-4{:style => "max-width:1400px"}
+    %header.w3-container.w3-light-grey.w3-animate-bottom
+      %h3 NathanielPautzke.com
+    .w3-container
+      %p Ruby on Rails Project
+      %hr/
+      %img.w3-left.w3-margin-right{:alt => "Avatar", :src => image_path("Photography_small.png"), :style => "width:100px"}/
+      %p
+        I created a dynamic webpage that consists of a few aspects of my life. A resume space, blog, photography section,
+        and YouTube content. The project was developed on a Linux box using the RubyMine IDE. Purchasing my own domain, I was able to
+        map my Heroku DNS to my custom domain name that also includes security certificates.  Dev tracking software and Git was used
+        to develop the website and push to a production server. This app is hosted on nathanielpautzke.com and if you like my
+        workd head over to my
+        = link_to "resume", resume_path, :style => "color: blue"
+        page.
+      %br/
+
+.w3-container.w3-margin-top
+  .w3-card-4{:style => "max-width:1400px"}
+    %header.w3-container.w3-light-grey.w3-animate-bottom
+      %h3 Color App
+    .w3-container
+      %p React-Native Project
+      %hr/
+      %img.w3-left.w3-margin-right{:alt => "Avatar", :src => image_path("Android_Screenshot.png"), :style => "width:100px;margin-bottom:5px"}/
+      %p
+        Simple react native app that can be run on IOS or Android. App takes in user input and generates a list of colors. When a color in this list
+        is touched it changes the background color to the selected box. App was tested on Android 6.0 while following a tutorial. You can find my code
+        to this app at:
+        = link_to("https://github.com/zombieman010/ReactSampleApp", "https://github.com/zombieman010/ReactSampleApp", :target => "blank", :rel=>"noopener noreferrer", :style=>"color: blue")
+      %br/
