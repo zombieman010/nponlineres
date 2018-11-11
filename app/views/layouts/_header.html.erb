@@ -1,21 +1,46 @@
 <div class="w3-top">
-  <div class="w3-sidebar w3-bar-block w3-card w3-top w3-animate-right w3-black" style="color:white;display:none;z-index:2;right:0px;width:20%;min-width:200px;" id="mySidebar">
+  <div class="w3-sidebar w3-bar-block w3-card w3-top w3-animate-right w3-black" style="color:white;display:none;z-index:2;right:0px;width:20%;min-width:150px;" id="mySidebar">
     <a href="javascript:void(0)" onclick="w3_close()"
-       class="w3-bar-item w3-button"><i class="fa fa-times-circle" style="padding-right: 5px"></i>Close Menu</a>
-    <a href="/" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-home" style="padding-right: 5px"></i> Home</a>
-    <a href="/projects" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-desktop" style="padding-right: 5px"></i>Projects</a>
-    <a href="/resume" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-file" style="padding-right: 5px"></i>Resume</a>
+       class="w3-bar-item w3-button nav-font-large "><i class="fa fa-times-circle" style="padding-right: 5px;"></i>Close Menu</a>
+    <a href="/" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large"><i class="fa fa-home" style="padding-right: 5px"></i> Home</a>
+    <a href="/projects" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large"><i class="fa fa-desktop" style="padding-right: 5px"></i>Projects</a>
+    <a href="/resume" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large"><i class="fa fa-mortar-board" style="padding-right: 5px"></i>Resume</a>
+    <div class="w3-padding-32">
+      <a class="w3-btn w3-large w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block';w3_close()" style="font-size: large;">ABOUT</a>
+    </div>
   </div>
+
+
+
   <div class="w3-bar w3-black w3-wide w3-padding w3-card">
     <%= link_to image_tag('navbar/Photography_small.png'), root_path, id: "logo"%></a>
-    <div class="w3-button w3-right w3-hide-large" onclick="w3_open()">☰</div>
-    <!-- Sidebar (hidden by default) -->
+    <div class="w3-button w3-right" onclick="w3_open()">☰</div>
+  </div>
+</div>
 
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <%= link_to "Home", root_path, class: " w3-bar-item w3-button", style: "text-decoration: none;" %>
-      <%= link_to "Projects", projects_path, class: "w3-bar-item w3-button", style: "text-decoration: none;"%>
-      <%= link_to "Resume", resume_path, class: "w3-bar-item w3-button", style: "text-decoration: none;" %>
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-2 w3-animate-top">
+    <header class="w3-container w3-theme-l1 w3-black">
+        <span onclick="document.getElementById('id01').style.display='none';w3_open()"
+              class="w3-button w3-display-topright">×</span>
+      <h4>ABOUT</h4>
+    </header>
+    <div class="w3-padding">
+      <h4>Website Specs:</h4>
+      <ul>
+        <li><a href="https://rubyonrails.org/" style="text-decoration: none" target="_blank">Ruby: 2.5.x</a></li>
+        <li><a href="https://rubyonrails.org/" style="text-decoration: none" target="_blank">Rails: 5.2.x</a></li>
+      </ul>
+      <h4>Layout Libraries</h4>
+      <ul>
+        <li><a href="http://getbootstrap.com/" style="text-decoration: none" target="_blank">Bootstrap</a></li>
+        <li><a href="https://fontawesome.com/" style="text-decoration: none" target="_blank">Font-Awesome</a></li>
+        <li><a href="https://www.w3schools.com/default.asp" style="text-decoration: none" target="_blank">W3-Schools</a></li>
+      </ul>
     </div>
+    <footer class="w3-container w3-theme-l1 w3-black">
+      <p>Welcom to NathanielPautzke.com</p>
+    </footer>
   </div>
 </div>
