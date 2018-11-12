@@ -12,7 +12,7 @@
       <Visible>1</Visible>
     </database>
     <database id="3" parent="1" name="nponline_test">
-      <ObjectId>24859</ObjectId>
+      <ObjectId>24923</ObjectId>
       <Owner>dev</Owner>
     </database>
     <database id="4" parent="1" name="onlineresume_development">
@@ -113,7 +113,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2018-11-01.00:22:45.204</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-11-11.20:56:04.596</IntrospectionTimestamp>
+      <IntrospectionStateNumber>4209</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -159,5 +160,142 @@
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
+    <sequence id="30" parent="23" name="users_id_seq">
+      <ObjectId>24883</ObjectId>
+      <Owner>dev</Owner>
+      <StateNumber>4156</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <table id="31" parent="23" name="ar_internal_metadata">
+      <ObjectId>24875</ObjectId>
+      <Owner>dev</Owner>
+      <StateNumber>4155</StateNumber>
+    </table>
+    <table id="32" parent="23" name="schema_migrations">
+      <ObjectId>24867</ObjectId>
+      <Owner>dev</Owner>
+      <StateNumber>4154</StateNumber>
+    </table>
+    <table id="33" parent="23" name="users">
+      <ObjectId>24885</ObjectId>
+      <Owner>dev</Owner>
+      <StateNumber>4209</StateNumber>
+    </table>
+    <column id="34" parent="31" name="key">
+      <Position>1</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4155</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="35" parent="31" name="value">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>4155</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="36" parent="31" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4155</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="37" parent="31" name="updated_at">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4155</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="38" parent="31" name="ar_internal_metadata_pkey">
+      <ObjectId>24881</ObjectId>
+      <ColNames>key</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="39" parent="31" name="ar_internal_metadata_pkey">
+      <ObjectId>24882</ObjectId>
+      <ColNames>key</ColNames>
+      <UnderlyingIndexName>ar_internal_metadata_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="32" name="version">
+      <Position>1</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4154</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="41" parent="32" name="schema_migrations_pkey">
+      <ObjectId>24873</ObjectId>
+      <ColNames>version</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="42" parent="32" name="schema_migrations_pkey">
+      <ObjectId>24874</ObjectId>
+      <ColNames>version</ColNames>
+      <UnderlyingIndexName>schema_migrations_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="43" parent="33" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4156</StateNumber>
+      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>users_id_seq</SequenceName>
+    </column>
+    <column id="44" parent="33" name="name">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>4156</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="45" parent="33" name="email">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>4156</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="46" parent="33" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4156</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="47" parent="33" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4156</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="48" parent="33" name="password_digest">
+      <Position>6</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>4209</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="49" parent="33" name="users_pkey">
+      <ObjectId>24892</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="50" parent="33" name="index_users_on_email">
+      <ObjectId>24922</ObjectId>
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="33" name="users_pkey">
+      <ObjectId>24893</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>
