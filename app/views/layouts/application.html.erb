@@ -16,12 +16,21 @@
 
   <body>
     <%= render 'layouts/header' %>
+
+
+    <% flash.each do |message_type, message| %>
+    <div id="flash-box" class="alert alert-<%= message_type %>"><%= message %><a class="w3-button w3-right fa fa-window-close" onclick="flash_close()"></a></div>
+    <% end %>
+
     <div class="container" >
+
       <%= yield %>
 
     </div>
     <%= render 'layouts/footer' %>
   </body>
+
+  <%= debug(params) if Rails.env.development? %>
 
 
 

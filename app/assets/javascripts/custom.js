@@ -6,3 +6,9 @@ function w3_open() {
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
+
+// Flash box close
+function flash_close() {
+    document.getElementById("flash-box").style.display = "none";
+}
+
