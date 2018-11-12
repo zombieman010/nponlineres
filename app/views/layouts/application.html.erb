@@ -19,7 +19,7 @@
 
 
     <% flash.each do |message_type, message| %>
-    <div id="flash-box" class="alert alert-<%= message_type %>"><%= message %><a class="w3-button w3-right fa fa-window-close" onclick="flash_close()"></a></div>
+    <div id="flash-box" class="alert alert-<%= message_type %>"><%= message %><a class="w3-button w3-right fa fa-window-close" style="padding-top: 4px; padding-right: 2px" onclick="flash_close()"></a></div>
     <% end %>
 
     <div class="container" >

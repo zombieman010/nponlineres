@@ -7,6 +7,8 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false }
 
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, confirmation: true,
+            unless: Proc.new { |a| a.password.blank? },
+            length: { minimum: 6 }
 
 end

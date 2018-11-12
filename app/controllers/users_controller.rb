@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       redirect_to root_path
       flash[:success] = "Welcome, " + @user.name
     else
-      render 'new'
+      render 'users/new'
     end
   end
 
