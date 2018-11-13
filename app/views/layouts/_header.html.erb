@@ -1,14 +1,15 @@
 <div class="w3-top">
-  <!-- Pop out sidebar --> 
-  <div class="w3-sidebar w3-bar-block w3-card w3-top w3-animate-right w3-black" style="color:white;display:none;z-index:2;right:0px;width:20%;min-width:150px;" id="mySidebar">
-    <%= render 'layouts/sidebar' %>
-  </div>
-
   <!-- Header Logo and Links --> 
   <div class="w3-bar w3-black w3-wide w3-padding w3-card">
     <%= link_to image_tag('navbar/Photography_small.png'), root_path, id: "logo"%></a>
     <div class="w3-button w3-right" onclick="w3_open()">☰</div>
     <%= link_to "Sign up", signup_path, class: "w3-button w3-right" %>
+  </div>
+
+  <!-- Pop out sidebar -->
+  <div class="w3-sidebar w3-bar-block w3-card w3-top w3-animate-right w3-black"
+       style="color:white;display:none;z-index:2;right:0px;width:200px;min-width:250px;" id="mySidebar">
+    <%= render 'layouts/sidebar' %>
   </div>
 </div>
 

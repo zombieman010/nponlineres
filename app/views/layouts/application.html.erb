@@ -3,8 +3,7 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= favicon_link_tag "favicon.ico" %>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -15,23 +14,24 @@
   </head>
 
   <body>
+
     <%= render 'layouts/header' %>
 
-
     <% flash.each do |message_type, message| %>
-    <div id="flash-box" class="alert alert-<%= message_type %>"><%= message %><a class="w3-button w3-right fa fa-window-close" style="padding-top: 4px; padding-right: 2px" onclick="flash_close()"></a></div>
+       <div id="flash-box" class="alert alert-<%= message_type %>"><%= message %>
+         <i class="w3-right fa fa-window-close"
+            style="padding-top:4px;" onclick="flash_close()"></i>
+       </div>
     <% end %>
 
     <div class="container" >
-
       <%= yield %>
-
     </div>
+
     <%= render 'layouts/footer' %>
+
   </body>
 
+  <!-- Ruby debug box for development -->
   <%= debug(params) if Rails.env.development? %>
-
-
-
 </html>

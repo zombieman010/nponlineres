@@ -89,7 +89,7 @@ p {
   padding-top: 4px;
   &:hover {
     text-decoration: none;
-    color: none;
+    color: white;
   }
 }
 
@@ -129,5 +129,13 @@ p {
 .github_image {
   img {
     padding-right: 8px;
+  }
+}
+
+/* About Model */
+
+#about_modal {
+  li a {
+    text-decoration: none;
   }
 }

@@ -4,7 +4,7 @@ class UserTest < ActiveSupport::TestCase
 
   def setup
     @user = User.new(name: 'Example User', email: 'user@example.com',
-                     password: "foobar", password_confirmation: "foobar")
+                     password: "123456!Ee", password_confirmation: "123456!Ee")
   end
 
   test 'should be valid' do
@@ -57,12 +57,30 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'password should be present (nonblank)' do
-    @user.password = @user.password_confirmation = " " * 6
-    assert_not @user.valid?
+    @user.password = @user.password_confirmation = " " * 8
+    assert @user.password.blank?
   end
 
   test 'password should have a minimum length' do
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+
+  # Adding Regex for password complexity
+  test 'password validation should reject password' do
+    invalid_passwords = %w[123456 123456! 123456E 123456e abcdef! abcdefE]
+    invalid_passwords.each do |invalid_passwords|
+      @user.password = @user.password_confirmation = invalid_passwords
+      assert_not @user.valid?, "#{invalid_passwords.inspect} should be invalid"
+    end
+  end
+
+  test 'password validation should accept password' do
+    valid_passwords = %w[!@Eemm12 123456@Eeee ab12Ed@cdef!]
+    valid_passwords.each do |valid_passwords|
+      @user.password = @user.password_confirmation = valid_passwords
+      assert @user.valid?, "#{valid_passwords.inspect} should be valid"
+    end
+  end
+
 end
