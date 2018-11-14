@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/projects', to: 'static_pages#projects'
   get '/resume',   to: 'static_pages#resume'
   get '/signup',   to: 'users#new'
+  post '/signup',  to: 'users#create'
 
   resources :users
 

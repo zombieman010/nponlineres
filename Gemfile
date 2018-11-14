@@ -10,6 +10,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Gem bundle for Haml
 gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'haml-rails'
+#jQuery for Rails
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Boostrap addon
@@ -52,6 +54,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Rails testing controller gem
+  gem 'rails-controller-testing'
 end
 
 group :test do
