@@ -3,7 +3,10 @@
   <div class="w3-bar w3-black w3-wide w3-padding w3-card">
     <%= link_to image_tag('navbar/Photography_small.png'), root_path, id: "logo"%></a>
     <div class="w3-button w3-right" onclick="w3_open()">☰</div>
+    <% if @admin_user %>
     <%= link_to "Sign up", signup_path, class: "w3-button w3-right" %>
+    <% end %>
+    <%= link_to "Log in", login_path, class: "w3-button w3-right"  %>
   </div>
 
   <!-- Pop out sidebar -->
@@ -17,3 +20,4 @@
 <div id="id01" class="w3-modal">
   <%= render 'layouts/about_modal' %>
 </div>
+

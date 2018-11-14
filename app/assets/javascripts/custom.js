@@ -14,5 +14,17 @@ function flash_close() {
 }
 
 
+$(document).ready(function () {
+    $('#log-in-info').mouseenter(function () {
+        $('#log-in-desc').slideDown("slow");
+    });
+    $('#log-in-info').mouseleave(function () {
+        $('#log-in-desc').slideUp("slow");
+    });
+});
+
+
+
+
 
 
