@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   patch '/edit', to: 'users#update'
   get '/profile', to: 'users#show'
 
+  resources :users
+
+
+
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

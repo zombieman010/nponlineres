@@ -1,6 +1,6 @@
 %body
   = provide(:title, "Users")
-  - @users.each do |user|
+    - @users.each do |user|
     / Users
     .w3-container.row.w3-round.w3-white{ style: "margin-top: 10px;"}
       .w3-container.w3-card.col-md-6.col-md-offset-3
@@ -16,4 +16,7 @@
         %p
           %i.fa.fa-pencil.fa-fw.w3-margin-right.w3-text-theme
           Bio:
+        %hr/
+        = link_to "Delete", user_path(user), method: :delete, data: { confrim: 'Are you sure?'}
+
 
