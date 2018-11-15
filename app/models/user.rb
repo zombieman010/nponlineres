@@ -8,11 +8,12 @@ class User < ApplicationRecord
 
   has_secure_password
   VALID_PASSWORD_REGEX = /\A(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{6,}\z/
+  SPECIAL_CHAR_LIST = "!,@,#,$,&*"
   validates :password, presence: true, 
                        confirmation: { case_sensitive: false },
                        unless: Proc.new { |a| a.password.blank? },
                        format: { with: VALID_PASSWORD_REGEX, 
-                                 message: "must contain upper, lower, number, and a special character" },
+                                 message: "must contain upper, lower, number, and at least one #{SPECIAL_CHAR_LIST}." },
                        length: { minimum: 6 }
 
   # Returns the hash digest of the given string.
