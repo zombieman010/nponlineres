@@ -5,14 +5,14 @@
       <ServerVersion>10.5</ServerVersion>
     </root>
     <database id="2" parent="1" name="nponline_development">
-      <ObjectId>25141</ObjectId>
+      <ObjectId>25230</ObjectId>
       <Owner>dev</Owner>
       <IntrospectionStateNumber>115</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </database>
     <database id="3" parent="1" name="nponline_test">
-      <ObjectId>25142</ObjectId>
+      <ObjectId>25231</ObjectId>
       <Owner>dev</Owner>
     </database>
     <database id="4" parent="1" name="onlineresume_development">
@@ -113,8 +113,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2018-11-14.17:26:14.954</IntrospectionTimestamp>
-      <IntrospectionStateNumber>4492</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-11-14.23:31:49.233</IntrospectionTimestamp>
+      <IntrospectionStateNumber>4560</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -161,63 +161,63 @@
       <Type>index</Type>
     </access-method>
     <sequence id="30" parent="23" name="users_id_seq">
-      <ObjectId>25159</ObjectId>
+      <ObjectId>25248</ObjectId>
       <Owner>dev</Owner>
-      <StateNumber>4489</StateNumber>
+      <StateNumber>4557</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
     <table id="31" parent="23" name="ar_internal_metadata">
-      <ObjectId>25151</ObjectId>
+      <ObjectId>25240</ObjectId>
       <Owner>dev</Owner>
-      <StateNumber>4488</StateNumber>
+      <StateNumber>4556</StateNumber>
     </table>
     <table id="32" parent="23" name="schema_migrations">
-      <ObjectId>25143</ObjectId>
+      <ObjectId>25232</ObjectId>
       <Owner>dev</Owner>
-      <StateNumber>4487</StateNumber>
+      <StateNumber>4555</StateNumber>
     </table>
     <table id="33" parent="23" name="users">
-      <ObjectId>25161</ObjectId>
+      <ObjectId>25250</ObjectId>
       <Owner>dev</Owner>
-      <StateNumber>4492</StateNumber>
+      <StateNumber>4560</StateNumber>
     </table>
     <column id="34" parent="31" name="key">
       <Position>1</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4488</StateNumber>
+      <StateNumber>4556</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="35" parent="31" name="value">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>4488</StateNumber>
+      <StateNumber>4556</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="36" parent="31" name="created_at">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4488</StateNumber>
+      <StateNumber>4556</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="37" parent="31" name="updated_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4488</StateNumber>
+      <StateNumber>4556</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <index id="38" parent="31" name="ar_internal_metadata_pkey">
-      <ObjectId>25157</ObjectId>
+      <ObjectId>25246</ObjectId>
       <ColNames>key</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="39" parent="31" name="ar_internal_metadata_pkey">
-      <ObjectId>25158</ObjectId>
+      <ObjectId>25247</ObjectId>
       <ColNames>key</ColNames>
       <UnderlyingIndexName>ar_internal_metadata_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
@@ -226,16 +226,16 @@
       <Position>1</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4487</StateNumber>
+      <StateNumber>4555</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="41" parent="32" name="schema_migrations_pkey">
-      <ObjectId>25149</ObjectId>
+      <ObjectId>25238</ObjectId>
       <ColNames>version</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="42" parent="32" name="schema_migrations_pkey">
-      <ObjectId>25150</ObjectId>
+      <ObjectId>25239</ObjectId>
       <ColNames>version</ColNames>
       <UnderlyingIndexName>schema_migrations_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
@@ -244,7 +244,7 @@
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4489</StateNumber>
+      <StateNumber>4557</StateNumber>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
       <SequenceName>users_id_seq</SequenceName>
@@ -252,53 +252,53 @@
     <column id="44" parent="33" name="name">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>4489</StateNumber>
+      <StateNumber>4557</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="45" parent="33" name="email">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>4489</StateNumber>
+      <StateNumber>4557</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="46" parent="33" name="created_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4489</StateNumber>
+      <StateNumber>4557</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="47" parent="33" name="updated_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4489</StateNumber>
+      <StateNumber>4557</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="48" parent="33" name="password_digest">
       <Position>6</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>4491</StateNumber>
+      <StateNumber>4559</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="49" parent="33" name="admin">
       <Position>7</Position>
       <DataType>boolean|0s</DataType>
-      <StateNumber>4492</StateNumber>
+      <StateNumber>4560</StateNumber>
       <TypeId>16</TypeId>
     </column>
     <index id="50" parent="33" name="users_pkey">
-      <ObjectId>25168</ObjectId>
+      <ObjectId>25257</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <index id="51" parent="33" name="index_users_on_email">
-      <ObjectId>25170</ObjectId>
+      <ObjectId>25259</ObjectId>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="52" parent="33" name="users_pkey">
-      <ObjectId>25169</ObjectId>
+      <ObjectId>25258</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/resume',   to: 'static_pages#resume'
   get '/signup',   to: 'users#new'
   post '/signup',  to: 'users#create'
+  get '/users', to: 'users#index'
   get '/edit', to: 'users#edit'
   patch '/edit', to: 'users#update'
   get '/profile', to: 'users#show'

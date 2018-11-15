@@ -7,6 +7,11 @@
 <div class="w3-padding-16">
   <a href="/profile" class="w3-btn w3-large w3-dark-grey w3-hover-light-grey" style="font-size: large;">Profile</a>
 </div>
+  <% if current_user.admin == true %>
+    <div class="w3-padding-16">
+      <a href="/users" class="w3-btn w3-large w3-dark-grey w3-hover-light-grey" style="font-size: large;">Users</a>
+    </div>
+  <% end %>
 <% end %>
 
 

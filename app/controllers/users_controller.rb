@@ -1,7 +1,18 @@
 class UsersController < ApplicationController
   before_action :reg_user, only: [:show, :update, :edit]
 
+
   attr_accessor :name, :email
+
+  def index
+    if logged_in?
+      if admin?
+        @users = User.all
+      end
+    else
+      redirect_to root_path
+    end
+  end
 
   def show
     @user = current_user
@@ -15,7 +26,6 @@ class UsersController < ApplicationController
         redirect_to current_user
         flash[:danger] = current_user.name + " ,you must be admin to create an account!"
       end
-
     else
       redirect_to root_path
       flash[:danger] = "Must be admin to create an account!"
