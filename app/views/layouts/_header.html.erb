@@ -4,8 +4,6 @@
     <%= link_to image_tag('navbar/Photography_small.png'), root_path, id: "logo"%></a>
     <div class="w3-button w3-right" onclick="w3_open()">☰</div>
 
-
-
     <% if logged_in? %>
       <%= link_to "Log out", logout_path, method: :delete, class: "w3-button w3-right" %>
       <% if current_user.admin == true %>
@@ -14,7 +12,6 @@
       <% else  %>
       <%= link_to "Log in", login_path, class: "w3-button w3-right"  %>
     <% end %>
-
 
   </div>
 

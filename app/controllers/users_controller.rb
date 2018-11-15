@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  #before_action :reg_user, only: [:show, :edit]
+  before_action :reg_user, only: [:show, :update, :edit]
 
   attr_accessor :name, :email
 
@@ -13,12 +13,12 @@ class UsersController < ApplicationController
         @user = User.new
       else
         redirect_to current_user
-        flash[:danger] = current_user.name + " ,you must be admin to create account."
+        flash[:danger] = current_user.name + " ,you must be admin to create an account!"
       end
 
     else
       redirect_to root_path
-      flash[:danger] = "Must be admin to create account"
+      flash[:danger] = "Must be admin to create an account!"
     end
   end
 
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    @user.update(users_params)
+    @user.update(edit_params)
     redirect_to @user
     flash[:success] = "Profile updated!"
   end
@@ -58,6 +58,10 @@ class UsersController < ApplicationController
   def users_params
     params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation)
+  end
+
+  def edit_params
+    params.require(:user).permit(:name)
   end
 
 end

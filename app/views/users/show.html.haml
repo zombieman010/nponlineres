@@ -1,5 +1,5 @@
 %body
-  = provide(:title, @user.name)
+  = provide(:title, "Profile")
   / Profile
   .w3-container.row.w3-round.w3-white{ style: "margin-top: 10px;"}
     .w3-container.col-md-6.col-md-offset-3
@@ -21,6 +21,10 @@
       %p
         %i.fa.fa-pencil.fa-fw.w3-margin-right.w3-text-theme
         Bio:
+      %hr/
+      %a.row.btn.btn-primary.w3-col-3{ href: "/edit", style: "margin: 3px 3px 5px 5px;width:75px; text-decoration: none;"}
+        Edit
+
 
 
 
