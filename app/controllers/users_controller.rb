@@ -1,47 +1,63 @@
 class UsersController < ApplicationController
+  #before_action :reg_user, only: [:show, :edit]
+
   attr_accessor :name, :email
 
   def show
-    if current_user
-      @user = User.find(params[:id])
-      if is_admin?
-        @admin_user = @user
-      end
-    else
-      redirect_to root_path
-    end
+    @user = current_user
   end
 
   def new
-    @user = User.new
+    if logged_in?
+      if admin?
+        @user = User.new
+      else
+        redirect_to current_user
+        flash[:danger] = current_user.name + " ,you must be admin to create account."
+      end
+
+    else
+      redirect_to root_path
+      flash[:danger] = "Must be admin to create account"
+    end
   end
 
   def create
-    if @admin_user
-    @user = User.new(users_params)
-    if @user.save
-      if @admin_user
-        log_in @user
+    if admin?
+      @user = User.new(users_params)
+      if @user.save
+        redirect_to root_path
+        flash[:success] = "User created: " + @user.name
+      else
+        render 'new'
       end
-      redirect_to root_path
-      flash[:success] = "User created: " + @user.name
-    else
-      render 'new'
-    end
-    else
-      redirect_to root_path
     end
   end
 
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    @user.update(users_params)
+    redirect_to @user
+    flash[:success] = "Profile updated!"
+  end
+
   private
+
+  def admin?
+    current_user.admin == true
+  end
+
+  def reg_user
+    current_user.admin == false
+  end
 
   def users_params
     params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation)
   end
 
-  #Private method to determine if admin
-  def is_admin?
-   
-  end
 end

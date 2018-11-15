@@ -1,14 +1,13 @@
 %body
   = provide(:title, @user.name)
   / Profile
-  .w3-card.w3-round.w3-white{ style: "margin-top: 10px"}
-    .w3-container.w3-left
+  .w3-container.row.w3-round.w3-white{ style: "margin-top: 10px;"}
+    .w3-container.col-md-6.col-md-offset-3
       %h2
         Welcome,
-        = @user.name + "!"
-
+        = @user.name
       %hr/
-    .w3-container
+    .w3-container.w3-card.col-md-6.col-md-offset-3
       %h4.w3-center My Profile
       %p.w3-center
         %i.fa.fa-user-circle{ style: "font-size: 170px;" }
@@ -17,8 +16,11 @@
         %i.fa.fa-pencil.fa-fw.w3-margin-right.w3-text-theme
         Email:
         = @user.email
+
       %hr/
       %p
         %i.fa.fa-pencil.fa-fw.w3-margin-right.w3-text-theme
         Bio:
-        = @user.email
+
+
+
