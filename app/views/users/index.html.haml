@@ -4,6 +4,7 @@
   %h2
     = @users.count
     users
+    %hr/
   = will_paginate
     - @users.each do |user|
     / Users
