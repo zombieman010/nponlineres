@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def index
     if logged_in?
       if admin?
-        @users = User.all
+        @users = User.paginate(page: params[:page], per_page: 5)
       end
     else
       redirect_to root_path
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
     if admin?
       @user = User.find(params[:id])
       @user.destroy
-      redirect_to root_path
+      redirect_to users_path
       flash[:success] = @user.name + " has been deleted!"
     end
   end
