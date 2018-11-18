@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
   before_action :reg_user, only: [:show, :update, :edit]
 
-
   attr_accessor :name, :email
 
   def index
     if logged_in?
       if admin?
-        @users = User.all
+        @users = User.paginate(page: params[:page], per_page: 5)
       end
     else
       redirect_to root_path
@@ -51,15 +50,25 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     @user.update(edit_params)
-    redirect_to @user
     flash[:success] = "Profile updated!"
   end
 
-  private
+  def destroy
+    if admin?
+      @user = User.find(params[:id])
+      @user.destroy
+      redirect_to users_path
+      flash[:success] = @user.name + " has been deleted!"
+    end
+  end
 
   def admin?
     current_user.admin == true
   end
+
+  private
+
+
 
   def reg_user
     current_user.admin == false
