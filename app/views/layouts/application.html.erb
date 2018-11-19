@@ -30,7 +30,7 @@
     <%= render 'layouts/header' %>
 
     <% flash.each do |message_type, message| %>
-       <div id="flash-box" class="alert alert-<%= message_type %>"><%= message %>
+       <div id="flash-box" class="w3-animate-top alert alert-<%= message_type %>"><%= message %>
          <i class="w3-right fa fa-window-close"
             style="padding-top:4px;" onclick="flash_close()"></i>
        </div>
