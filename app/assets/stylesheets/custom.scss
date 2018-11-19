@@ -140,3 +140,14 @@ p {
   }
 }
 
+/* Homepage about me/mission */
+
+#mission {
+  @media (max-width: 399px){
+    height: auto;
+  }
+  @media (min-width: 400px){
+    height: 600px;
+  }
+
+}

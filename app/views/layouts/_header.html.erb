@@ -6,11 +6,6 @@
 
     <% if logged_in? %>
       <%= link_to "Log out", logout_path, method: :delete, class: "w3-button w3-right" %>
-      <% #TODO Update date to admin?  %>
-      <% if current_user.admin == true %>
-        <% #TODO move to side bar for mobile purposes %>
-      <%= link_to "Sign up", signup_path, class: "w3-button w3-right" %>
-      <% end %>
       <% else  %>
       <%= link_to "Log in", login_path, class: "w3-button w3-right"  %>
     <% end %>
