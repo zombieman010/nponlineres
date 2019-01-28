@@ -8,16 +8,16 @@
     .w3-third
       .w3-white.w3-text-grey.w3-card-4
         .w3-display-container
-          %img{:alt => "Avatar", :src => image_path("profile_picture.jpg"), :style => "width:100%;margin-botom: 5px"}/
+          %img{:alt => "Avatar", :src => image_path("profile_picture.jpg"), :style => "width:100%;margin-bottom: 5px"}/
           .w3-display-bottomleft.w3-container.w3-text-black
-            %h2 Nathaniel Pautzke
+            %h2.w3-text-white Nathaniel Pautzke
         .w3-container
           %p
             %img{:alt => "Avatar", :src => image_path("PDF_24.png"), :class => "w3-marign-right"}/
             = link_to "Download Resume", "/documents/Nathaniel Pautzke - Resume .pdf", :target => "_blank", :style => "padding-top: 5px;"
           %p
             %i.fa.fa-briefcase.fa-fw.w3-margin-right.w3-large.w3-text-blue>
-            Software Developer
+            Software Engineer
           %p
             %i.fa.fa-home.fa-fw.w3-margin-right.w3-large.w3-text-blue>
             Shorewood, MN
@@ -31,7 +31,7 @@
             %p
               %i.github_img
                 = image_tag("GitHub-Mark-32px.png")
-                =link_to "github.com/zombieman010", "https://github.com/zombieman010", style: "padding-left: 3px;", target: "_blank"
+                =link_to "GIT - zombieman010", "https://github.com/zombieman010", style: "padding-left: 3px;", target: "_blank"
           %hr/
           %p.w3-large
             %b
@@ -87,11 +87,21 @@
           Professional Experience
         .w3-container
           %h5.w3-opacity
+            %b Associate Software Engineer / IDEMIA
+          %h6.w3-text-blue
+            %i.fa.fa-calendar.fa-fw.w3-margin-right>
+            February 2019 -
+            %span.w3-tag.w3-blue.w3-round Current
+          %p
+            In my role as an Associate Software Engineer, I will be working with Java to help create, maintain, and test various microservices.
+            The team I am a part of focus on augmented identity solutions using biometrics like facial and fingerprint data.
+          %hr/
+        .w3-container
+          %h5.w3-opacity
             %b Data Processing Tech I / IWCO Direct
           %h6.w3-text-blue
             %i.fa.fa-calendar.fa-fw.w3-margin-right>
-            April 2016 -
-            %span.w3-tag.w3-blue.w3-round Current
+            April 2016 - February 2019
           %p
             Responsible for taking raw data to be used for dynamic page content. Daily I work with a few scripting languages (TSSUtil and Data Right) to normalize, cleanse, and append data to meet customer
             needs. Over my career, I have worked with over half a billion records for mailing. Another part of my role includes using software to create advanced matching for cleansing duplicate records in large files.
