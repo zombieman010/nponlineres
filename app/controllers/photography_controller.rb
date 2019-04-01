@@ -5,10 +5,8 @@ class PhotographyController < ApplicationController
   end
 
   def new
-    if logged_in?
-      if admin?
-        @photo = Photo.new
-      end
+    if logged_in? && admin?
+      @photo = Photo.new
     else
       redirect_to root_path
       flash[:danger] = "More permissions required."
@@ -16,14 +14,33 @@ class PhotographyController < ApplicationController
   end
 
   def create
-    if logged_in?
-      if admin?
-        @photo = Photo.new(photo_params)
-        if @photo.save
-          redirect_to photography_add_photo_path
-          flash[:success] = "Photo added!"
-        end
+    if logged_in? && admin?
+      @photo = Photo.new(photo_params)
+      if @photo.save
+        redirect_to photography_add_photo_path
+        flash[:success] = "Photo added!"
       end
+    end
+  end
+
+  def edit
+    if logged_in? && admin?
+      @photo = Photo.find(params[:id])
+    else
+      redirect_to root_path
+      flash[:danger] = "More permissions required."
+    end
+  end
+
+  def update
+    if logged_in? && admin?
+      @photo = Photo.find(params[:id])
+      @photo.update(photo_params)
+      redirect_to photography_path
+      flash[:success] = "Photo updated!"
+    else
+      redirect_to root_path
+      flash[:danger] = "More permissions required."
     end
   end
 
@@ -32,13 +49,11 @@ class PhotographyController < ApplicationController
   end
 
   def destroy
-    if logged_in?
-      if admin?
-        @photo = Photo.find(params[:id])
-        @photo.destroy
-        redirect_to photography_path
-        flash[:success] = "Photo deleted."
-      end
+    if logged_in? && admin?
+      @photo = Photo.find(params[:id])
+      @photo.destroy
+      redirect_to photography_path
+      flash[:success] = "Photo deleted."
     end
   end
 

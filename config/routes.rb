@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get '/photography/add_photo', to: 'photography#new'
   post '/photography/add_photo', to: 'photography#create'
   delete '/photography/delete_photo', to: 'photography#destroy'
+  patch '/photography/update_photo', to: 'photography#update'
 
   resources :photography
 
