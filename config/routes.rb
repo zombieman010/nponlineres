@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
+  root 'static_pages#home'
   get 'sessions/new'
   get 'users/new'
-  root 'static_pages#home'
   get '/projects', to: 'static_pages#projects'
   get '/resume',   to: 'static_pages#resume'
   get '/signup',   to: 'users#new'
@@ -14,14 +14,17 @@ Rails.application.routes.draw do
 
   resources :users
 
-
-
-
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  resources :users
+  get '/photography', to: 'photography#index'
+  get '/photography/add_photo', to: 'photography#new'
+  post '/photography/add_photo', to: 'photography#create'
+  delete '/photography/delete_photo', to: 'photography#destroy'
+
+  resources :photography
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

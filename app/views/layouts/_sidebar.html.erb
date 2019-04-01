@@ -1,20 +1,23 @@
 <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large "><i class="fa fa-times-circle" style="padding-right: 5px;"></i>Close Menu</a>
 <a href="/" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large"><i class="fa fa-home" style="padding-right: 5px"></i> Home</a>
-<a href="/projects" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large"><i class="fa fa-desktop" style="padding-right: 5px"></i>Projects</a>
-<a href="/resume" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large"><i class="fa fa-mortar-board" style="padding-right: 5px"></i>Resume</a>
+<a href="<%= photography_url %>>" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large"><i class="fa fa-camera-retro" style="padding-right: 5px"></i> Photography</a>
+<a href="<%= projects_url %>" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large"><i class="fa fa-desktop" style="padding-right: 5px"></i>Projects</a>
+<a href="<%= resume_url %>" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large"><i class="fa fa-mortar-board" style="padding-right: 5px"></i>Resume</a>
 
 <% if logged_in? %>
 <div class="w3-padding-16">
-  <a href="/profile" class="w3-btn w3-large w3-dark-grey w3-hover-light-grey" style="font-size: large;">Profile</a>
+  <a href="<%= profile_url %>" class="w3-btn w3-large w3-dark-grey w3-hover-light-grey" style="font-size: large;">Profile</a>
 </div>
   <% if current_user.admin? %>
     <div class="w3-padding-16">
       <%= link_to "Sign up", signup_path, class: "w3-btn w3-large w3-dark-grey w3-hover-light-grey", style: "font-size: large;" %>
     </div>
     <div class="w3-padding-16">
-      <a href="/users" class="w3-btn w3-large w3-dark-grey w3-hover-light-grey" style="font-size: large;">Users</a>
+      <a href="<%= users_url %>" class="w3-btn w3-large w3-dark-grey w3-hover-light-grey" style="font-size: large;">Users</a>
     </div>
-
+    <div class="w3-padding-16">
+      <a href="<%= photography_add_photo_url %>" class="w3-btn w3-large w3-dark-grey w3-hover-light-grey" style="font-size: large;">Add Photos</a>
+    </div>
   <% end %>
 <% end %>
 

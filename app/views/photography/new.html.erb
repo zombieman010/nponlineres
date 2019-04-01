@@ -1,0 +1,24 @@
+<%= provide(:title, "Add Photo") %>
+
+<%= form_for(@photo, url: photography_add_photo_url) do |f| %>
+  <%#= render 'shared/error_messages' %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :link %>
+  <%= f.text_field :link, class: 'form-control' %>
+
+  <%= f.label :category %>
+  <br/>
+  <%= f.select :category, ['Wedding', 'Engagement','Portrait', 'General Session',
+                           'Graduation', 'Landscapes', 'Travel', 'Tourist','Sports' ], class: 'form-control' %>
+  <br/>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, class: 'form-control' %>
+
+
+  <%= f.submit "Submit Photo", class: "btn btn-primary" %>
+  <a href="<%= root_path %>" class="btn btn-primary w3-right" id="signup-cancel">Cancel</a>
+<% end %>

@@ -1,0 +1,17 @@
+<% provide(:title, "Photography") %>
+
+<div class="w3-row" style="margin-bottom:25px">
+  <% @photos.each do |photo| %>
+    <div class="w3-half">
+      <img src="<%= photo.link %>" style="width:100%" alt="<%= photo.name %>">
+      <%= link_to "View Photo", "photography/#{photo.id}", method: :get %>
+      <% if logged_in?  %>
+        <% if current_user.admin?  %>
+        <%= link_to "Delete", "photography/#{photo.id}", method: :delete %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= will_paginate @photos %>

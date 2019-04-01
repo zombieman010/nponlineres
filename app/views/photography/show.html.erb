@@ -1,0 +1,12 @@
+<%= provide(:title, "#{@photo.name}") %>
+
+<div class="w3-card w3-round w3-white">
+  <div class="w3-container">
+    <h4 class="w3-center"><%= @photo.name %></h4>
+    <p class="w3-center"><img src="<%= @photo.link %>" style="width: 75%" alt="<%= @photo.name %>"></p>
+    <hr>
+    <p><i class="fa fa-chevron-right fa-fw w3-margin-right w3-text-theme"></i><b>Category:</b> <%= @photo.category %></p>
+    <p><i class="fa fa-comment fa-fw w3-margin-right w3-text-theme"></i> <b>Description:</b> <%= @photo.description %></p>
+  </div>
+  <%= link_to "Back to Photos", photography_path, class: "btn btn-primary", style: "margin: 5px" %>
+</div>
