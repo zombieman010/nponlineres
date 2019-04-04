@@ -62,11 +62,11 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
   def admin?
     current_user.admin == true
   end
+
+  private
 
   def reg_user
     current_user.admin == false
