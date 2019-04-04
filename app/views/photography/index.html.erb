@@ -1,6 +1,6 @@
 <% provide(:title, "Photography") %>
 
-<div class="w3-row" style="margin-bottom:25px">
+<div class="w3-row w3-row-padding" style="margin-bottom:25px">
   <% @photos.each do |photo| %>
     <div class="w3-half">
       <img src="<%= photo.link %>" style="width:100%" alt="<%= photo.name %>">
