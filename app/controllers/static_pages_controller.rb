@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
     Photo.all.order('id DESC').each do |i|
       if counter <= 4
         photo_list.append(i.link)
-        ++counter
+        counter += 1
       end
     end
     @photo_show = photo_list
