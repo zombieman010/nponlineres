@@ -1,57 +1,111 @@
 = provide(:title, "Home")
 %body
-  %header.w3-container.w3-theme
-    .w3-row-padding.w3-center
-      .w3-third
-        .w3-card.w3-container{:style => "min-height:410px"}
-          %h3 Photography
-          %br/
-          %i.fa.fa-camera-retro.w3-margin-bottom.w3-text-theme{:style => "font-size:120px"}
-          %p Meaningful Sessions
-          %p High Quality
-          %p Reasonably Priced
-      .w3-third
-        .w3-card.w3-container{:style => "min-height:410px"}
-          %h3 Software Engineer
-          %br/
-          %i.fa.fa-database.w3-margin-bottom.w3-text-theme{:style => "font-size:120px"}
-          %p Language Driven
-          %p Best Practices Focused
-          %p Passionate
-      .w3-third
-        .w3-card.w3-container{:style => "min-height:410px"}
-          %h3 Creative Thinker
-          %br/
-          %i.fa.fa-lightbulb-o.w3-margin-bottom.w3-text-theme{:style => "font-size:120px"}
-          %p Idea Motivated
-          %p Innovative
-          %p Quick Learner
-    .w3-container.w3-black.w3-center.w3-opacity.w3-padding-32.w3-margin-top
-      %h1.w3-margin.w3-xlarge
-        %i.fa.fa-quote-left
-          Computer science is no more about computers than astronomy is about telescopes.
-        %i.fa.fa-quote-right
-        %br
-          Edsger Dijkstra
-    .w3-half.w3-blue-grey.w3-container.w3-margin-top{id: "mission"}
-      .w3-padding-64.w3-center
-        %h1 About Me
-        %i.fa.fa-user-circle-o.w3-margin-bottom.w3-text-theme{:style => "font-size:50px"}
-        .w3-left-align.w3-padding-large
-          %p
-            Software Engineer and hobby photographer from Shorewood Minnesota. One reason I wanted to become a software
-            engineer is that I love seeing an idea come to life.
-          %p
-            Also, I enjoy problem-solving in general. There is something
-            about working on a complex problem and you finally get that “ah-ha” moment. There is no better feeling.
-    .w3-half.w3-container.w3-margin-top{id: "mission",:style => "background-color:#D3D3D3D3"}
-      .w3-padding-64.w3-center
-        %h1 Mission
-        %i.fa.fa-balance-scale.w3-margin-bottom.w3-text-theme{:style => "font-size:50px"}
-        .w3-left-align.w3-padding-large
-          %p
-            My mission is to focus on quality and innovation in any aspect of my life. I enjoy learning and strive to
-            succeed as the little fish in the big pond.
-          %p
-            I operate with integrity and intention with a goal driven attitude. My personal philosophy is that
-            one is never done learning.
+  -#%header.w3-container.w3-theme
+  .w3-container.w3-row-padding.w3-center
+    .w3-third
+      .w3-card.w3-container{:style => "min-height:410px"}
+        %h3 Photography
+        %br/
+        %i.fa.fa-camera-retro.w3-margin-bottom.w3-text-theme{:style => "font-size:120px"}
+        %p Meaningful Sessions
+        %p High Quality
+        %p Reasonably Priced
+    .w3-third
+      .w3-card.w3-container{:style => "min-height:410px"}
+        %h3 Software Engineer
+        %br/
+        %i.fa.fa-database.w3-margin-bottom.w3-text-theme{:style => "font-size:120px"}
+        %p Language Driven
+        %p Best Practices Focused
+        %p Passionate
+    .w3-third
+      .w3-card.w3-container{:style => "min-height:410px"}
+        %h3 Creative Thinker
+        %br/
+        %i.fa.fa-lightbulb-o.w3-margin-bottom.w3-text-theme{:style => "font-size:120px"}
+        %p Idea Motivated
+        %p Innovative
+        %p Quick Learner
+
+  -#.w3-container.w3-card.w3-margin-top{:style => "background-color:#D3D3D3D3"}
+  %h2.w3-center.w3-margin-top Spotlight Photos
+  %hr
+  .w3-container.w3-content{:style => "max-width:1024px;position:relative"}
+    - @photo_show.each do |link|
+      %a{href: "#{photography_path}"}
+        %img.mySlides.w3-animate-opacity{:src => "#{link}", :style => "width:100%"}/
+        %a.w3-button.w3-hover-dark-grey{:onclick => "plusDivs(-1)", :style => "position:absolute;top:45%;left:0;"} ❮
+        %a.w3-button.w3-hover-dark-grey{:onclick => "plusDivs(+1)", :style => "position:absolute;top:45%;right:0;"} ❯
+  %hr
+
+  .w3-container.w3-black.w3-center.w3-opacity.w3-padding-32.w3-margin-top
+    %h1.w3-margin.w3-xlarge
+      %i.fa.fa-quote-left
+        Computer science is no more about computers than astronomy is about telescopes.
+      %i.fa.fa-quote-right
+      %br
+        Edsger Dijkstra
+  .w3-half.w3-blue-grey.w3-container.w3-margin-top{id: "mission"}
+    .w3-padding-64.w3-center
+      %h1 About Me
+      %i.fa.fa-user-circle-o.w3-margin-bottom.w3-text-theme{:style => "font-size:50px"}
+      .w3-left-align.w3-padding-large
+        %p
+          Software Engineer and hobby photographer from Shorewood Minnesota. One reason I wanted to become a software
+          engineer is that I love seeing an idea come to life.
+        %p
+          Also, I enjoy problem-solving in general. There is something
+          about working on a complex problem and you finally get that “ah-ha” moment. There is no better feeling.
+  .w3-half.w3-container.w3-margin-top{id: "mission",:style => "background-color:#D3D3D3D3"}
+    .w3-padding-64.w3-center
+      %h1 Mission
+      %i.fa.fa-balance-scale.w3-margin-bottom.w3-text-theme{:style => "font-size:50px"}
+      .w3-left-align.w3-padding-large
+        %p
+          My mission is to focus on quality and innovation in any aspect of my life. I enjoy learning and strive to
+          succeed as the little fish in the big pond.
+        %p
+          I operate with integrity and intention with a goal driven attitude. My personal philosophy is that
+          one is never done learning.
+    :javascript
+          // Slideshows
+          var slideIndex = 1;
+
+          function plusDivs(n) {
+            slideIndex = slideIndex + n;
+            showDivs(slideIndex);
+          }
+
+          function showDivs(n) {
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
+            }
+            x[slideIndex-1].style.display = "block";
+          }
+
+          showDivs(1);
+
+
+      // Slideshows
+      var slideIndex = 1;
+
+      function plusDivs(n) {
+        slideIndex = slideIndex + n;
+        showDivs(slideIndex);
+      }
+
+      function showDivs(n) {
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+      }
+
+      showDivs(1);
+
