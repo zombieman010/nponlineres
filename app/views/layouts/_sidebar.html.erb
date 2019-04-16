@@ -1,5 +1,7 @@
 <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large "><i class="fa fa-times-circle" style="padding-right: 5px;"></i>Close Menu</a>
+<% if request.original_url != root_url %>
 <a href="/" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large"><i class="fa fa-home" style="padding-right: 5px"></i> Home</a>
+<% end %>
 <a href="<%= photography_url %>" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large"><i class="fa fa-camera-retro" style="padding-right: 5px"></i> Photography</a>
 <a href="<%= projects_url %>" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large"><i class="fa fa-desktop" style="padding-right: 5px"></i>Projects</a>
 <a href="<%= resume_url %>" onclick="w3_close()" class="w3-bar-item w3-button nav-font-large"><i class="fa fa-mortar-board" style="padding-right: 5px"></i>Resume</a>
