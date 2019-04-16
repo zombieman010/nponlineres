@@ -31,8 +31,7 @@
   %hr
   .w3-container.w3-content{:style => "max-width:900px;position:relative"}
     - @photo_show.each do |link|
-      %a{href: "#{photography_path}"}
-        %img.mySlides{:src => "#{link}", :style => "width:100%"}
+      %img.mySlides{:src => "#{link}", :style => "width:100%"}
   %hr
 
   .w3-container.w3-black.w3-center.w3-opacity.w3-padding-32.w3-margin-top
@@ -65,18 +64,18 @@
           I operate with integrity and intention with a goal driven attitude. My personal philosophy is that
           one is never done learning.
   :javascript
-    var slideIndex = 0;
-    carousel();
+      var slideIndex = 0;
+      carousel();
 
-    function carousel() {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > x.length) {slideIndex = 1}
+        x[slideIndex-1].style.display = "block";
+        setTimeout(carousel, 3800);
       }
-      slideIndex++;
-      if (slideIndex > x.length) {slideIndex = 1}
-      x[slideIndex-1].style.display = "block";
-      setTimeout(carousel, 5000);
-    }
 
