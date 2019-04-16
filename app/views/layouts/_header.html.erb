@@ -1,7 +1,11 @@
 <div class="w3-top">
   <!-- Header Logo and Links --> 
   <div class="w3-bar w3-black w3-wide w3-padding w3-card">
-    <%= link_to image_tag('navbar/lighthouse.png'), root_path, id: "logo"%></a>
+    <% if request.original_url != root_url %>
+      <%= link_to image_tag('navbar/lighthouse.png'), root_path, id: "logo"%>
+    <% else %>
+      <%= image_tag('navbar/lighthouse.png', id: "logo") %>
+    <% end %>
     <div class="w3-button w3-right" onclick="w3_open()">☰</div>
 
     <% if logged_in? %>
