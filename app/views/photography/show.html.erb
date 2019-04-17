@@ -8,11 +8,14 @@
     <p><i class="fa fa-chevron-right fa-fw w3-margin-right w3-text-theme"></i><b>Category:</b> <%= @photo.category %></p>
     <p><i class="fa fa-chevron-right fa-fw w3-margin-right w3-text-theme"></i><b>Description:</b> <%= @photo.description %></p>
   </div>
-  <%= link_to "Back to Photos", photography_path, class: "btn btn-primary", style: "margin: 5px" %>
+  <% if request.env['HTTP_REFERER'] %>
+      <%= link_to "Back to Photos", request.env['HTTP_REFERER'], fallback_location: photography_path, class: "btn btn-primary", style: "margin: 5px" %>
+    <% else %>
+      <%= link_to "Back to Photos", photography_path, class: "btn btn-primary", style: "margin: 5px" %>
+    <% end %>
   <% if logged_in?  %>
     <% if current_user.admin? %>
      <%= link_to "Edit Photo", edit_photography_path, class: "btn btn-primary", style: "margin: 5px" %>
       <% end %>
   <% end %>
-
 </div>
