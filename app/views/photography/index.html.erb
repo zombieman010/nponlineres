@@ -1,17 +1,38 @@
 <% provide(:title, "Photography") %>
 
+<div>
+  <a href="<%= photography_wedding_url %>"><button class="w3-blue">Wedding Photos</button></a>
+</div>
+
+<div class="w3-dropdown-hover" style="margin-left: 15px;margin-bottom: 5px;">
+  <button class="w3-button w3-theme">Filter Images <i class="fa fa-caret-down"></i></button>
+  <div class="w3-dropdown-content w3-bar-block w3-border">
+    <% @dropdown.each do |item| %>
+    <a href="<%= photography_url %>?filter=<%= item %>" class="w3-bar-item w3-button"><%= item %></a>
+    <% end %>
+</div>
+</div>
+
+
 <div class="w3-row w3-row-padding" style="margin-bottom:25px">
+  <% if @photos.empty? %>
+    <p>Images have not been added for this category yet. Check back soon!</p>
+    <% else %>
   <% @photos.each do |photo| %>
     <div class="w3-half">
       <img src="<%= photo.link %>" style="width:100%" alt="<%= photo.name %>">
-      <%= link_to "View Photo", "photography/#{photo.id}", method: :get %>
-      <% if logged_in?  %>
-        <% if current_user.admin?  %>
-        <%= link_to "Delete", "photography/#{photo.id}", method: :delete %>
+        <%= link_to "View Photo", "photography/#{photo.id}", method: :get %>
+        <% if logged_in?  %>
+          <% if current_user.admin?  %>
+           <%= link_to "Delete", "photography/#{photo.id}", method: :delete %>
+          <% end %>
         <% end %>
-      <% end %>
     </div>
+    <% end %>
   <% end %>
 </div>
 
 <%= will_paginate @photos %>
+
+
+

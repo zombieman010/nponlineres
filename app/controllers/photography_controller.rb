@@ -1,7 +1,34 @@
 class PhotographyController < ApplicationController
 
   def index
-    @photos = Photo.paginate(page: params[:page], per_page: 4).order('id DESC')
+
+    @dropdown = ['None', 'Animals','Astrophotography','Portrait', 'General Session',
+                 'Graduation', 'Landscapes', 'Travel', 'Sports', 'Cars']
+
+    filter = params[:filter].to_s
+
+    if ['Animals','Astrophotography','Portrait', 'General Session',
+        'Graduation', 'Landscapes', 'Travel', 'Sports', 'Cars' ].include? filter
+      filter = filter
+    else
+      filter = nil
+    end
+
+    if filter == nil || filter == "None"
+      @photos = Photo.where("category != 'Engagement'").where("category != 'Wedding'").paginate(page: params[:page], per_page: 4).
+          order('id DESC')
+    else
+      @photos = Photo.where("category != 'Engagement'").where("category != 'Wedding'").where("category = '#{filter}'")
+                    .paginate(page: params[:page], per_page: 4).order('id DESC')
+    end
+  end
+
+  def wedding
+    @photos = Photo.where("category = 'Wedding'").paginate(page: params[:page], per_page: 8).order('id DESC')
+  end
+
+  def engagement
+
   end
 
   def new
@@ -64,7 +91,7 @@ class PhotographyController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:name, :link, :category, :description)
+    params.require(:photo).permit(:name, :link, :category, :description, :filter)
   end
 
 end
