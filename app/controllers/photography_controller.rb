@@ -24,7 +24,7 @@ class PhotographyController < ApplicationController
   end
 
   def wedding
-    @photos = Photo.where("category = 'Wedding'").paginate(page: params[:page], per_page: 8).order('id DESC')
+    @photos = Photo.where("category = 'Wedding'").paginate(page: params[:page], per_page: 50).order('id DESC')
   end
 
   def engagement
