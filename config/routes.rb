@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   delete '/photography/delete_photo', to: 'photography#destroy'
   patch '/photography/update_photo', to: 'photography#update'
 
+  get '/photography/wedding', to: 'photography#wedding'
+
   resources :photography
 
 
