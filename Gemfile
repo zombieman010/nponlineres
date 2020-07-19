@@ -36,7 +36,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'masonry-rails', '>= 0.2.4'
 
 #Pagiation gems
-gem 'will_paginate',           '>= 3.1.6'
+gem 'will_paginate',           '>= 2.3.17bu'
 gem 'bootstrap-will_paginate', '>= 1.0.0'
 
 # Use ActiveStorage variant

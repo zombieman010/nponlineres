@@ -15,7 +15,7 @@
 
 
 <div class="w3-row w3-row-padding" style="margin-bottom:25px">
-  <% if @photos.empty? %>
+  <% if @photos.length == 0 %>
     <p>Images have not been added for this category yet. Check back soon!</p>
     <% else %>
   <% @photos.each do |photo| %>
