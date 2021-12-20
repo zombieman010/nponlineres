@@ -13,7 +13,7 @@ gem 'haml-rails', '>= 2.0.1'
 #jQuery for Rails
 gem 'jquery-rails', '~> 4.4', '>= 4.4.0'
 # Use Puma as the app server
-gem 'puma', '~> 4.3', '>= 4.3.9'
+gem 'puma', '~> 3.11'
 # Boostrap addon
 gem 'bootstrap-sass', '>=3.3.7'
 # Use SCSS for stylesheets
