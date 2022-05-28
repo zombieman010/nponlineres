@@ -4,12 +4,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
+gem 'rails', '~> 5.2.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Gem bundle for Haml
 gem 'haml', '~> 5.0', '>= 5.0.4'
-gem 'haml-rails', '>= 1.0.0'
+gem 'haml-rails', '>= 2.0.1'
 #jQuery for Rails
 gem 'jquery-rails', '~> 4.4', '>= 4.4.0'
 # Use Puma as the app server
@@ -17,7 +17,7 @@ gem 'puma', '~> 3.12', '>= 3.12.6'
 # Boostrap addon
 gem 'bootstrap-sass', '>= 3.4.0'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0', '>= 5.0.7'
+gem 'sass-rails', '~> 5.1', '>= 5.1.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -61,13 +61,13 @@ group :development do
   gem 'spring', '>= 2.0.2'
   gem 'spring-watcher-listen', '~> 2.0.1'
   # Rails testing controller gem
-  gem 'rails-controller-testing', '>= 1.0.2'
+  gem 'rails-controller-testing', '>= 1.0.5'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'rspec-rails', '>= 3.8.1'
-  gem 'capybara', '>= 3.10.0'
+  gem 'rspec-rails', '>= 5.0.2'
+  gem 'capybara', '>= 3.35.3'
   gem 'selenium-webdriver', '>= 3.14.1'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper', '>= 2.1.0'
