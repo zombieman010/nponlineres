@@ -1,18 +1,48 @@
 = provide(:title, "Projects")
 
 .w3-container
+  %h1
+    My Projects
+  %br
   .w3-card-4{:style => "max-width:1400px"}
     %header.w3-container.w3-light-grey
       %h3 NathanielPautzke.com
-    .w3-container
-      %p Ruby on Rails Project
-      %hr/
-      %img.w3-left.w3-margin-right{:alt => "Avatar", :src => image_path("Photography_small.png"), :style => "width:100px"}/
+    .w3-container.w3-padding-16
       %p
-        I created a dynamic webpage that consists of a few aspects of my life. A resume space, photography section,
-        and projects overview. The project was developed on a Linux box using the RubyMine IDE. Purchasing my own domain, I was able to
+        Framework: Rails | Language: Ruby
+        %br
+        Deployment Strategy: Heroku Box with custom domain
+      %hr/
+      %img.w3-left.w3-margin-right{:alt => "Avatar", :src => image_path("navbar/lighthouse.png"), :style => "width:100px"}/
+      %p
+        With the experience I gained from working at my first job as a developer, I found a love for Ruby on Rails. The
+        idea of convention over configuration was an interesting concept to grasp early on, but now really enjoy the
+        framework. The purpose of this site is to give me a personal space outside of social media where I can show other
+        parts of my life such as photography, work experience, and hopefully more to come.
+      %p
+        This project was developed on a Linux box using the RubyMine IDE. Purchasing my own domain, I was able to
         map my Heroku DNS to my custom domain name that also includes security certificates.  Dev tracking software and Git was used
         to develop the website and push to a production server. This app is hosted on nathanielpautzke.com and if you like my
         workd head over to my
         = link_to "resume", resume_path, :style => "color: blue"
         page.
+  %br
+  .w3-card-4{:style => "max-width:1400px"}
+    %header.w3-container.w3-light-grey
+      %h3
+        My Wedding Website:
+        = link_to "wedding.mollyandnathaniel.com", "https://wedding.mollyandnathaniel.com", :style => "color:blue", :target => "_blank"
+    .w3-container.w3-padding-16
+      %p
+      Framework: ASP.NET Core | Language: C#
+      %br
+      Deployment Strategy: Digital Ocean Droplet/Nginx/CertBot(ssl)
+      %hr/
+      %p
+        When we were planning our wedding, I wanted to have the option to have people come and give us any photos that
+        they had taken that day. The idea was similar to the disposable camera that people left after the wedding was over. Getting
+        started with this project, I knew I needed some help. I teamed up with my best friend. He was not a fan of rails
+        and used ASP.NET a lot. I learned C# and ASP.Net as well as nginx and cert bot to deploy to digital ocean. I tried
+        to keep cost minimal but had enough resources to get through the wedding day. We also created an admin portal to approve or
+        deny photos being displayed on the website. It was a success with more than 100 users on the website as well as 20+
+        submissions.
